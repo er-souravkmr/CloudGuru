@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Frontend\EnquireController;
 
 //Home Routes
@@ -18,8 +20,5 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquire')
 
 
 
-//Admin Routes
-Route::get('/admin' , [AdminController::class , 'index']);
-Route::get('/admin/login' , [AdminController::class , 'login']);
-Route::get('/admin/register' , [AdminController::class , 'register']);
+
 
