@@ -8,7 +8,7 @@
     <meta name="description" content="Spotlyf">
     <meta name="keywords" content="">
     <meta name="author" content="spotlyf">
-    <title>Martvalley | Admin</title>
+    <title>CloudGuru | Admin</title>
     <link rel="apple-touch-icon" src="{{asset('admin-assets/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" src="{{asset('app-assets/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -56,7 +56,7 @@
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <h4 class="card-title mb-1">Login to access Admin Panel! 👋</h4>
                                 <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                                <form class="auth-login-form mt-2" method="POST" action="{{ route('signin') }}">
+                                <form class="auth-login-form mt-2" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label class="form-label" for="email">Email</label>

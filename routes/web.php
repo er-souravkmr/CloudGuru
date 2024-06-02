@@ -18,7 +18,13 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquire')
 
 
 
-
-
+//Admin Route 
+  Route::get('/admin' , [HomeController::class , 'index'])->name('home');
+  Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function(){     
+      Route::match(['get','post'],'login', 'AdminController@login');
+      Route::group(['middleware'=>['admin']],function(){
+          Route::get('/dashboard','AdminController@index');
+      });
+  });
 
 
