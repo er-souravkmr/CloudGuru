@@ -13,7 +13,7 @@ Route::get('/about' , [HomeController::class , 'about'])->name('about');
 Route::get('/trainers' , [HomeController::class , 'trainers'])->name('trainers');
 Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallery');
 Route::get('/certification' , [HomeController::class , 'certification'])->name('certification');
-Route::get('/course' , [HomeController::class , 'course'])->name('course');
+Route::get('/course' , [HomeController::class , 'course'])->name('courses');
 Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
 
 
@@ -30,6 +30,16 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('enquire','EnquireController@index')->name('enquire');
           Route::get('enquire/edit','EnquireController@edit')->name('enquire.edit');
           Route::get('enquire/show','EnquireController@show')->name('enquire.show');
+          
+          Route::get('course','CourseController@index')->name('course');
+          Route::get('course/create','CourseController@create')->name('course.create');
+          Route::post('course/store','CourseController@store')->name('course.store');
+          Route::get('course/edit','CourseController@edit')->name('course.edit');
+          Route::get('course/show','CourseController@show')->name('course.show');
+
+          Route::get('subcourse','EnquireController@index')->name('subcourse');
+          Route::get('subcourse/edit','EnquireController@edit')->name('subcourse.edit');
+          Route::get('subcourse/show','EnquireController@show')->name('subcourse.show');
 
       });
   });

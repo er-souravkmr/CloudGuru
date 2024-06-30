@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="Spotlyf Admin">
-    <link rel="shortcut icon" href="{{asset('frontend/assets/img/favicon.png')}}" type="image/x-icon">
-    <title>@yield('title') - TurnPro</title>
+    <link rel="shortcut icon" href="{{asset('public/frontend/assets/img/favicon.png')}}" type="image/x-icon">
+    <title>@yield('title') - Cloud Guru</title>
 
     @include('admin/partials/header')
 

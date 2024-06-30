@@ -44,18 +44,38 @@
               </li>
       
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" data-bs-auto-close="outside" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Courses
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Cloud Technologies</a></li>
-                  <li><a class="dropdown-item" href="#">Cyber Security</a></li>
-                  <li><a class="dropdown-item" href="#">Network & Firewall </a></li>
-                  <li><a class="dropdown-item" href="#">Artificial Intelligence(AI)</a></li>
-                  <li><a class="dropdown-item" href="#">Machine Learning (ML)</a></li>
-                  <li><a class="dropdown-item" href="#">Data Science</a></li>
-                  <li><a class="dropdown-item" href="#">Website Devlopment</a></li>
-                  <li><a class="dropdown-item" href="#">Microsoft Technologies</a></li>
+                  <li class="dropend">
+                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Submenu</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Cyber Security</a></li>
+                      <li><a class="dropdown-item" href="#">Network & Firewall </a></li>
+                      <li><a class="dropdown-item" href="#">Artificial Intelligence(AI)</a></li>
+                      <li><a class="dropdown-item" href="#">Machine Learning (ML)</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropend">
+                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Submenu</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Cyber Security</a></li>
+                      <li><a class="dropdown-item" href="#">Network & Firewall </a></li>
+                      <li><a class="dropdown-item" href="#">Artificial Intelligence(AI)</a></li>
+                      <li><a class="dropdown-item" href="#">Machine Learning (ML)</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropend">
+                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Submenu</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Cyber Security</a></li>
+                      <li><a class="dropdown-item" href="#">Network & Firewall </a></li>
+                      <li><a class="dropdown-item" href="#">Artificial Intelligence(AI)</a></li>
+                      <li><a class="dropdown-item" href="#">Machine Learning (ML)</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </li>
 

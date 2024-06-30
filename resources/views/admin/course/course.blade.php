@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
-@section('title','Blogs')
+@section('title','Course')
 
 @section('row')
 <div class="content-header-left col-md-9 col-12 mb-2">
     <div class="row breadcrumbs-top">
         <div class="col-12">
-            <h2 class="content-header-title float-left mb-0">Enquired List</h2>
+            <h2 class="content-header-title float-left mb-0">Courses List</h2>
 
         </div>
     </div>
@@ -14,7 +14,7 @@
 <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
     <div class="form-group breadcrumb-right">
         <div class="dropdown">
-            {{-- <a href="{{ route('blog.create') }}" class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-float waves-light" type="button">create</a> --}}
+            <a href="{{ route('course.create') }}" class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-float waves-light" type="button">create</a>
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
         <div class="blog-list-wrapper">
             <div class="row">
 
-            @foreach ($enquire as $item)
+            @foreach ($course as $item)
                 <div class="col-md-4 col-12">
                     <div class="card">
                         {{-- <a href="#">
@@ -36,17 +36,14 @@
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#" class="blog-title-truncate text-body-heading">
-                                    {{ substr($item->title,0,30) }}
-                                    @if(strlen($item->title) > 30 )...@endif
+                                    {{ substr($item->courses,0,30) }}
+                                    @if(strlen($item->courses) > 30 )...@endif
                                 </a>
                             </h4>
                          
                         
-                            <p class="card-text blog-content-truncate" style="height: 80px;">
-                                {{ substr($item->description,0,110) }}
-                                @if(strlen($item->description) > 110 )...@endif
-                            </p>
-                            <hr>
+                           
+                            
                             <div class="d-flex justify-content-between align-items-center">
                                 <button data-id="{{ $item->id }}" type="button" class="delete-blog btn btn-outline-danger waves-effect danger">Delete</button>
                                 <a href="{{ route('enquire.edit', [ "id" => $item->id ]) }}" class="font-weight-bold">Edit</a>

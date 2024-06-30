@@ -13,7 +13,7 @@
                         <div class="user-nav d-sm-flex d-none"><span
                                 class="user-name font-weight-bolder">{{ Auth::guard('admin')->user()->name }}</span><span
                                 class="user-status">Admin</span></div><span class="avatar"><img class="round"
-                                src="{{ asset('admin-assets/app-assets/images/portrait/small/avatar-s-11.jpg') }}"
+                                src="{{ asset('public/admin-assets/app-assets/images/portrait/small/avatar-s-11.jpg') }}"
                                 alt="avatar" height="40" width="40"><span
                                 class="avatar-status-online"></span></span>
                     </a>
@@ -71,8 +71,8 @@
                 </li>
 
                 @if (Auth::guard('admin')->user())
-                    <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
-                            class="d-flex align-items-center" href="#">
+                    <li class="{{ Request::is('admin/course*') ? 'active' : '' }} nav-item"><a
+                            class="d-flex align-items-center" href="{{ route('course') }}">
 
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-center"
                                 width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
@@ -85,8 +85,22 @@
 
                             <span class="menu-title text-truncate">Courses</span></a>
                     </li>
+                    <li class="{{ Request::is('admin/subcourse*') ? 'active' : '' }} nav-item"><a
+                            class="d-flex align-items-center" href="{{ route('subcourse') }}">
 
-                    <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-center"
+                                width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <line x1="4" y1="6" x2="20" y2="6" />
+                                <line x1="8" y1="12" x2="16" y2="12" />
+                                <line x1="6" y1="18" x2="18" y2="18" />
+                            </svg>
+
+                            <span class="menu-title text-truncate">Sub Courses</span></a>
+                    </li>
+
+                    <li class="{{ Request::is('admin/enquire*') ? 'active' : '' }} nav-item"><a
                             class="d-flex align-items-center" href="{{route('enquire')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-columns"
                                 width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"

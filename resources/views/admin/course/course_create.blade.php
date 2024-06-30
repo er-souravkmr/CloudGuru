@@ -23,7 +23,7 @@
                 <div class="card-body">
 
                
-                    <form enctype="multipart/form-data" id="blog_edit_form" action="{{ route('blog.store') }}" method="POST" class="mt-2">
+                    <form enctype="multipart/form-data" id="blog_edit_form" action="{{ route('course.store') }}" method="POST" class="mt-2">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 col-12">
@@ -32,12 +32,7 @@
                                     <input name="title" type="text" id="blog-edit-title" class="form-control" required />
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group mb-2">
-                                    <label for="blog-edit-category">Description</label>
-                                    <textarea data-length="200" class="form-control char-textarea" id="blog-edit-category" rows="3" placeholder="Description" name="description"> </textarea>
-                                </div>
-                            </div>
+                         
                         
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-2">
