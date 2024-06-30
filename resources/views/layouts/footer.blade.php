@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="foot-logo mb-4 p-2">
-                    <img src="{{url('assets/img/logo.jpg')}}" alt="" height="80px" width="150px">
+                    <img src="{{asset('public/assets/img/logo.jpg')}}" alt="" height="80px" width="150px">
                 </div>
 
                 <p class="text-white"><i class='bx bxs-phone-call' style="color: orangered;"></i> Call : +91  8700307203  </p>
@@ -82,7 +82,7 @@
 				
 
      {{-- <script src="{{url('assets/js/bootstrap.min.js')}}"></script>  --}}
-    <script src="{{url('assets/js/custom.js')}}"></script>
+    <script src="{{asset('public/assets/js/custom.js')}}"></script>
 
 
 

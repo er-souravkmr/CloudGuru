@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    @include('partials/header')
+    {{-- @include('layouts/header') --}}
 </head>
 
 <body>
 
-<a href="{{ route('login') }}"><button class="btn btn-outline-success lytpos-btn-primary">Login</button></a>
+{{-- <a href="{{ route('login') }}"><button class="btn btn-outline-success lytpos-btn-primary">Login</button></a> --}}
 
 <h1>Register</h1>
 
-<form  action="{{ route('signup') }}"  method="post">
+<form  action="{{ route('register') }}"  method="post">
     @csrf
 
     <label for="name">Name</label>

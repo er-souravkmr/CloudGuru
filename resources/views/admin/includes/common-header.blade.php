@@ -11,7 +11,7 @@
                         id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <div class="user-nav d-sm-flex d-none"><span
-                                class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span
+                                class="user-name font-weight-bolder">{{ Auth::guard('admin')->user()->name }}</span><span
                                 class="user-status">Admin</span></div><span class="avatar"><img class="round"
                                 src="{{ asset('admin-assets/app-assets/images/portrait/small/avatar-s-11.jpg') }}"
                                 alt="avatar" height="40" width="40"><span
@@ -20,8 +20,8 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
 
                         {{-- BD MANAGER --}}
-                        @if (Auth::user()->is_admin == 0 || Auth::user()->is_admin == 1)
-                            <a class="dropdown-item" href="{{ route('contact') }}"><i class="mr-50"
+                        @if (Auth::guard('admin')->user()->is_admin == 0 || Auth::guard('admin')->user()->is_admin == 1)
+                            <a class="dropdown-item" href="#"><i class="mr-50"
                                     data-feather="phone"></i> Contact</a>
                         @endif
 
@@ -70,9 +70,9 @@
                         </i><span class="menu-title text-truncate">Dashboard</span></a>
                 </li>
 
-                @if (Auth::user()->is_admin == 0 || Auth::user()->is_admin == 1)
+                @if (Auth::guard('admin')->user())
                     <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
-                            class="d-flex align-items-center" href="{{ route('categories') }}">
+                            class="d-flex align-items-center" href="#">
 
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-center"
                                 width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
@@ -83,11 +83,11 @@
                                 <line x1="6" y1="18" x2="18" y2="18" />
                             </svg>
 
-                            <span class="menu-title text-truncate">Category</span></a>
+                            <span class="menu-title text-truncate">Courses</span></a>
                     </li>
 
                     <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
-                            class="d-flex align-items-center" href="{{ route('products') }}">
+                            class="d-flex align-items-center" href="{{route('enquire')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-columns"
                                 width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -102,11 +102,11 @@
                                 <line x1="14.5" y1="18" x2="20" y2="18" />
                             </svg>
 
-                            <span class="menu-title text-truncate">Products</span></a>
+                            <span class="menu-title text-truncate">Enquire</span></a>
                     </li>
-
+{{-- 
                     <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
-                            class="d-flex align-items-center" href="{{ route('galleries') }}">
+                            class="d-flex align-items-center" href="#">
 
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo"
                                 width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"
@@ -119,7 +119,7 @@
                             </svg>
 
                             <span class="menu-title text-truncate">Gallery</span></a>
-                    </li>
+                    </li> --}}
 
                     {{-- <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
                             class="d-flex align-items-center" href="{{ route('blogs') }}">

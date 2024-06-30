@@ -13,20 +13,20 @@
     <link rel="shortcut icon" type="image/x-icon" src="{{asset('app-assets/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/admin-assets/app-assets/vendors/css/vendors.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset ('admin-assets/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset ('admin-assets/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset ('admin-assets/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset ('admin-assets/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset ('admin-assets/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset ('admin-assets/app-assets/css/themes/bordered-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('public/admin-assets/app-assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('public/admin-assets/app-assets/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('public/admin-assets/app-assets/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('public/admin-assets/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('public/admin-assets/app-assets/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('public/admin-assets/app-assets/css/themes/bordered-layout.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/app-assets/css/plugins/forms/form-validation.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/app-assets/css/pages/page-auth.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/admin-assets/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/admin-assets/app-assets/css/plugins/forms/form-validation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/admin-assets/app-assets/css/pages/page-auth.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/app-assets/css/custom-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/admin-assets/app-assets/css/custom-style.css')}}">
 
 </head>
 
@@ -43,7 +43,6 @@
                     <div class="auth-inner row m-0">
                      
                         <a class="brand-logo" href="{{route('home')}}">
-
                             <h2 class="brand-text text-primary ml-1">Admin Dashboard</h2>
                         </a>
                       

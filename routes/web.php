@@ -14,16 +14,23 @@ Route::get('/trainers' , [HomeController::class , 'trainers'])->name('trainers')
 Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallery');
 Route::get('/certification' , [HomeController::class , 'certification'])->name('certification');
 Route::get('/course' , [HomeController::class , 'course'])->name('course');
-Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquire');
+Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
 
 
 
 //Admin Route 
-  Route::get('/admin' , [HomeController::class , 'index'])->name('home');
+  Route::get('/admin' , [AdminController::class , 'index']);
   Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function(){     
-      Route::match(['get','post'],'login', 'AdminController@login');
+      Route::match(['get','post'],'login', 'AdminController@login')->name('login');
+      Route::match(['get','post'],'register', 'AdminController@register')->name('register');
+      Route::post('logout', 'AdminController@logout')->name('logout');
       Route::group(['middleware'=>['admin']],function(){
-          Route::get('/dashboard','AdminController@index');
+          Route::get('dashboard','DashboardController@index')->name('dashboard');
+
+          Route::get('enquire','EnquireController@index')->name('enquire');
+          Route::get('enquire/edit','EnquireController@edit')->name('enquire.edit');
+          Route::get('enquire/show','EnquireController@show')->name('enquire.show');
+
       });
   });
 

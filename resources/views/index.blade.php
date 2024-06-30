@@ -24,7 +24,7 @@
                     <div class="home-text">
                         <p>Welcome to</p>
                         <h2> CLOUD GURU</h2>
-                        <div class="hat-icon"><img src="{{ url('assets/img/hat-icon.png') }}" alt="" class="w-100">
+                        <div class="hat-icon"><img src="{{ asset('public/assets/img/hat-icon.png') }}" alt="" class="w-100">
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@
                                 src="https://cdn-icons-png.flaticon.com/128/841/841364.png" width="20px" height="20px"
                                 alt=""> </h4>
 
-                        <form action="{{ url('/enquire') }}" method="POST">
+                        <form action="{{ asset('public//enquire') }}" method="POST">
                             @csrf
                             <div class="mb-3"><input type="text" class="form-control" id="name" placeholder="Name"
                                     name="name">
@@ -75,37 +75,37 @@
             <div class="row g-4">
                 <div class="col-md-4 col-lg-2 col-6">
                     <div class="box">
-                        <img src="{{ url('assets/img/presentation.png') }}" alt="">
+                        <img src="{{ asset('public/assets/img/presentation.png') }}" alt="">
                         <p>Trainer Records</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2 col-6">
                     <div class="box">
-                        <img src="{{ url('assets/img/student.png') }}" alt="">
+                        <img src="{{ asset('public/assets/img/student.png') }}" alt="">
                         <p>Trained Student</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2 col-6">
                     <div class="box">
-                        <img src="{{ url('assets/img/trophy.png') }}" alt="">
+                        <img src="{{ asset('public/assets/img/trophy.png') }}" alt="">
                         <p>Success Ratio</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2 col-6">
                     <div class="box">
-                        <img src="{{ url('assets/img/book.png') }}" alt="">
+                        <img src="{{ asset('public/assets/img/book.png') }}" alt="">
                         <p>Cloud Training</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2 col-6">
                     <div class="box">
-                        <img src="{{ url('assets/img/location.png') }}" alt="">
+                        <img src="{{ asset('public/assets/img/location.png') }}" alt="">
                         <p>Job-Assistance</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2 col-6">
                     <div class="box">
-                        <img src="{{ url('assets/img/offline.png') }}" alt="">
+                        <img src="{{ asset('public/assets/img/offline.png') }}" alt="">
                         <p>Offline Learning</p>
                     </div>
                 </div>

@@ -8,8 +8,8 @@
     <title>Cloud Guru</title>
 
    <!-- css -->
-   <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
-   <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}"> 
+   <link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
+   <link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}"> 
 
 
     {{-- Owl --}}

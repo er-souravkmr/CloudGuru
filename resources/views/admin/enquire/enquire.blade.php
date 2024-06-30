@@ -21,9 +21,9 @@
     <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
         <div class="form-group breadcrumb-right">
             <div class="dropdown">
-                <a href="{{ route('product.create') }}"
+                {{-- <a href="{{ route('product.create') }}"
                     class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-float waves-light"
-                    type="button">create</a>
+                    type="button">create</a> --}}
             </div>
         </div>
     </div>
@@ -36,17 +36,22 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <div class="text-center">
+                            @if (session('message'))
+                                <div class="alert alert-success"> {{ session('message') }} </div>
+                            @endif
+                        </div>
                         <div class="card-datatable">
                             <div class="table-responsive">
-                                <table class="table" id="product-list">
+                                <table class="table" id="enquire-list">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Image</th>
                                             <th>Name</th>
-                                            <th>Category</th>
-                                            <th>Created at</th>
-                                            <th>Status</th>
+                                            <th>Email</th>
+                                            <th>Number</th>
+                                            <th>Course</th>
+                                            <th>Time</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -67,45 +72,41 @@
 @push('js')
     <script>
         $(function() {
-            $('#product-list').DataTable({
+            $('#enquire-list').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{!! route('products.show') !!}",
+                ajax: "{!! route('enquire.show') !!}",
                 columns: [{
                         data: 'id'
                     },
                     {
-                        data: 'images'
+                        data: 'name'
                     },
                     {
-                        data: 'title'
+                        data: 'email'
                     },
                     {
-                        data: 'category'
+                        data: 'number'
+                    },
+                    {
+                        data: 'course'
                     },
                     {
                         data: 'created_at'
                     },
-                    {
-                        data: 'status'
-                    },
+                   
                     {
                         data: 'action'
                     },
                 ],
-                // dom: 'Bfrtip',
-                // buttons: [
-                //     'copy', 'csv', 'excel', 'pdf', 'print'
-
-                // ]
-
+                
                 dom: 'Bfrtip',
                 buttons: [{
                         extend: 'pdf',
                         footer: true,
                         titleAttr: 'PDF',
                         extension: ".pdf",
-                        filename: "Products",
+                        filename: "Enquire",
                         title: "",
                         text: '<i class="fadeIn animated bx bx-file-blank">PDF</i> ',
                         className: 'btn btn-success',
@@ -140,46 +141,5 @@
         });
 
 
-        function changeStatus(id, el) {
-
-            $id = id;
-            $status = $(el).val();
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "Do You Want To Change Status!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, I Want!',
-                customClass: {
-                    confirmButton: 'btn btn-primary',
-                    cancelButton: 'btn btn-outline-danger ml-1'
-                },
-                buttonsStyling: false,
-                preConfirm: function($login, $blod_id) {
-                    window.location.replace("{{ route('product.change.status', []) }}?id=" + $id +
-                        "&status=" +
-                        $status);
-                },
-            });
-        }
-
-        function deleteItem(id) {
-            $contact = id;
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                customClass: {
-                    confirmButton: 'btn btn-primary',
-                    cancelButton: 'btn btn-outline-danger ml-1'
-                },
-                buttonsStyling: false,
-                preConfirm: function() {
-                    window.location.replace("{{ route('product.delete', []) }}?id=" + $contact);
-                },
-            });
-        }
     </script>
 @endpush

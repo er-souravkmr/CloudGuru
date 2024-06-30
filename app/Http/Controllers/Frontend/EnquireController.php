@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class EnquireController extends Controller
 {
     public function index(){
-        
+        return  view("admin.enquire.enquire");
     }
     public function submit(Request $request){
 
