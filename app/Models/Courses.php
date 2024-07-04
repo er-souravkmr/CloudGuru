@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Subcourse;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Courses extends Model
 {
     use HasFactory;
     protected $table ="course";
-    public function getSubCourse(){
-        return $this->hasOne(Subcourse::class,'course_id ');
+    public function subcourses(){
+        return $this->hasMany(Subcourse::class,'course_id');
     }
 }
