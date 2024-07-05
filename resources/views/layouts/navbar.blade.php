@@ -53,18 +53,20 @@
                         <ul class="dropdown-menu">
 
                             @foreach (getCoursesWithSubCourses() as $item)
-                                <li class="dropend">
-                                    <a class="dropdown-item dropdown-toggle" id="navbarDropdown{{ $item->id }}"
+                                <li class=" {{$item->subcourses->isNotEmpty() ?  "dropend" : "" }}">
+                                    <a class="{{$item->subcourses->isNotEmpty() ?  "dropdown-item dropdown-toggle" : "dropdown-item" }}" id="navbarDropdown{{ $item->id }}"
                                         data-bs-toggle="dropdown" href="#">{{ $item->courses }}</a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ $item->id }}">
-                                        @foreach ($item->subcourses as $subcourse)
-                                            @if ($subcourse)
-                                                <!-- Check if $subcourse is not null -->
-                                                <li><a class="dropdown-item" href="#">{{ $subcourse->course }}</a>
-                                                </li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
+                                    @if ($item->subcourses->isNotEmpty())
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ $item->id }}">
+                                            @foreach ($item->subcourses as $subcourse)
+                                                @if ($subcourse)
+                                                    <!-- Check if $subcourse is not null -->
+                                                    <li><a class="dropdown-item" href="#">{{ $subcourse->course }}</a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    @endif
                                 </li>
                             @endforeach
 

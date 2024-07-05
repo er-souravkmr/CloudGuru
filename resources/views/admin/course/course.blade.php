@@ -18,6 +18,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 
@@ -25,6 +26,11 @@
 
 <div class="content-detached content-left">
         <div class="blog-list-wrapper">
+            @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+            @endif          
             <div class="row">
 
             @foreach ($course as $item)
@@ -45,8 +51,8 @@
                            
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <button data-id="{{ $item->id }}" type="button" class="delete-blog btn btn-outline-danger waves-effect danger">Delete</button>
-                                <a href="{{ route('enquire.edit', [ "id" => $item->id ]) }}" class="font-weight-bold">Edit</a>
+                                <a href="{{ route('course.delete', [ "id" => $item->id ]) }}" class="btn btn-outline-danger waves-effect danger">Delete</a>
+                                <a href="{{ route('course.edit', [ "id" => $item->id ]) }}" class="btn btn-outline-success waves-effect success font-weight-bold">Edit</a>
                             </div>
                         </div>
                     </div>
@@ -63,28 +69,3 @@
 </div>
 
 @endsection
-
-{{-- @push('js')
-<script src="{{ asset("admin-assets/app-assets/vendors/js/extensions/sweetalert2.all.min.js") }}"></script>
-<script>
-    $(".delete-blog").on('click', function() {
-        $blog_id = $(this).data("id");
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            customClass: {
-                confirmButton: 'btn btn-primary',
-                cancelButton: 'btn btn-outline-danger ml-1'
-            },
-            buttonsStyling: false,
-            preConfirm: function($login, $blod_id) {
-
-                window.location.replace("{{ route('blog.delete', []) }}?id=" + $blog_id);
-            },
-        });
-    });
-</script>
-@endpush --}}

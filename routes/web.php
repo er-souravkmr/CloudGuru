@@ -34,7 +34,9 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('course','CourseController@index')->name('course');
           Route::get('course/create','CourseController@create')->name('course.create');
           Route::post('course/store','CourseController@store')->name('course.store');
-          Route::get('course/edit','CourseController@edit')->name('course.edit');
+          Route::get('course/edit/{id}','CourseController@edit')->name('course.edit');
+          Route::post('course/update','CourseController@update')->name('course.update');
+          Route::get('course/delete/{id}','CourseController@delete')->name('course.delete');
           Route::get('course/show','CourseController@show')->name('course.show');
 
           Route::get('subcourse','EnquireController@index')->name('subcourse');

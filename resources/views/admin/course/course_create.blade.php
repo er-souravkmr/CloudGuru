@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
-@section('title','Create Blogs')
+@section('title','Create Course')
 
 @section('row')
 <div class="content-header-left col-md-9 col-12 mb-2">
     <div class="row breadcrumbs-top">
         <div class="col-12">
-            <h2 class="content-header-title float-left mb-0">Blog Create</h2>
+            <h2 class="content-header-title float-left mb-0">Course Create</h2>
 
         </div>
     </div>
@@ -28,10 +28,11 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-2">
-                                    <label for="blog-edit-title">Title</label>
+                                    <label for="blog-edit-title">Course Name</label>
                                     <input name="title" type="text" id="blog-edit-title" class="form-control" required />
                                 </div>
                             </div>
+                           
                          
                         
                             <div class="col-md-6 col-12">
@@ -43,50 +44,10 @@
                                     </select>
                                 </div>
                             </div>
-                           
-                            <div class="col-12">
-                                <div class="form-group mb-2">
-                                    <label>Content</label>
-                                    <div id="blog-editor-wrapper">
-                                        <div id="blog-editor-container">
-                                            <div class="editor">
-
-                                            </div>
-                                            <textarea name="blog" style="display:none" id="hiddenArea"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-2">
-                                <div class="border rounded p-2">
-                                    <h4 class="mb-1">Featured Image</h4>
-                                    <div class="media flex-column flex-md-row">
-                                        <img src="" id="blog-feature-image" class="rounded mr-2 mb-1 mb-md-0" width="170" height="110" alt="Blog Featured Image" />
-                                        <div class="media-body">
-                                            <h5 class="mb-0">Main image:</h5>
-                                            <small class="text-muted">Required image resolution 800x400, image size 10mb.</small>
-                                            <p class="my-50">
-                                                {{-- <a href="javascript:void(0);" id="blog-image-text"></a> --}}
-                                            </p>
-                                            <div class="d-inline-block">
-                                                <div class="form-group mb-0">
-                                                    <div class="custom-file">
-                                                        <input type="file" name="image" class="custom-file-input" id="blogCustomFile" accept="image/*" />
-                                                        <label class="custom-file-label" for="blogCustomFile">Choose file</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                         
 
                             <div class="col-12 mt-50">
                                 <button type="submit" class="btn btn-primary mr-1">Save Changes</button>
-                                <a href="{{route('blogs')}}" type="reset" class="btn btn-outline-secondary">Cancel</a>
+                                <a href="{{route('course')}}" type="reset" class="btn btn-outline-secondary">Cancel</a>
                             </div>
                         </div>
                     </form>
