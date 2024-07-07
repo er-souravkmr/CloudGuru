@@ -37,11 +37,17 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('course/edit/{id}','CourseController@edit')->name('course.edit');
           Route::post('course/update','CourseController@update')->name('course.update');
           Route::get('course/delete/{id}','CourseController@delete')->name('course.delete');
-          Route::get('course/show','CourseController@show')->name('course.show');
+        //   Route::get('course/show','CourseController@show')->name('course.show');
+          
+          Route::get('subcourse','SubcourseController@index')->name('subcourse');
+          Route::get('subcourse/create','SubcourseController@create')->name('subcourse.create');
+          Route::post('subcourse/store','SubcourseController@store')->name('subcourse.store');
+          Route::get('subcourse/edit/{id}','SubcourseController@edit')->name('subcourse.edit');
+          Route::post('subcourse/update','SubcourseController@update')->name('subcourse.update');
+          Route::get('subcourse/delete/{id}','SubcourseController@delete')->name('subcourse.delete');
+          Route::get('subcourse/show','SubcourseController@show')->name('subcourse.show');
 
-          Route::get('subcourse','EnquireController@index')->name('subcourse');
-          Route::get('subcourse/edit','EnquireController@edit')->name('subcourse.edit');
-          Route::get('subcourse/show','EnquireController@show')->name('subcourse.show');
+          
 
       });
   });

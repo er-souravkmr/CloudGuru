@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Product Management')
+@section('title', 'Subcourse Management')
 @section('row')
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -13,7 +13,7 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-left mb-0">Enquiry Management</h2>
+                <h2 class="content-header-title float-left mb-0">SubCourse Management</h2>
 
             </div>
         </div>
@@ -21,9 +21,9 @@
     <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
         <div class="form-group breadcrumb-right">
             <div class="dropdown">
-                {{-- <a href="{{ route('product.create') }}"
+                <a href="{{ route('subcourse.create') }}"
                     class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-float waves-light"
-                    type="button">create</a> --}}
+                    type="button">create</a>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="card-datatable">
                             <div class="table-responsive">
-                                <table class="table" id="enquire-list">
+                                <table class="table" id="subcourse-list">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -72,10 +72,10 @@
 @push('js')
     <script>
         $(function() {
-            $('#enquire-list').DataTable({
+            $('#subcourse-list').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{!! route('enquire.show') !!}",
+                ajax: "{!! route('subcourse.show') !!}",
                 columns: [{
                         data: 'id'
                     },
