@@ -47,10 +47,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Number</th>
+                                            <th>SubCourse</th>
                                             <th>Course</th>
+                                            <th>Status</th>
                                             <th>Time</th>
                                             <th>Action</th>
                                         </tr>
@@ -80,16 +79,13 @@
                         data: 'id'
                     },
                     {
-                        data: 'name'
-                    },
-                    {
-                        data: 'email'
-                    },
-                    {
-                        data: 'number'
-                    },
-                    {
                         data: 'course'
+                    },
+                    {
+                        data: 'course_id'
+                    },
+                    {
+                        data: 'status'
                     },
                     {
                         data: 'created_at'
@@ -106,11 +102,11 @@
                         footer: true,
                         titleAttr: 'PDF',
                         extension: ".pdf",
-                        filename: "Enquire",
+                        filename: "SubCourse",
                         title: "",
                         text: '<i class="fadeIn animated bx bx-file-blank">PDF</i> ',
                         className: 'btn btn-success',
-                        messageTop: 'All Products',
+                        messageTop: 'All Subcourses',
 
                         exportOptions: {
                             // stripHtml: false,

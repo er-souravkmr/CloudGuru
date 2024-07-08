@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Courses;
 use App\Models\Subcourse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,26 +12,30 @@ class SubcourseController extends Controller
 {
     public function index(){
 
-        $data = Subcourse::get();
+        // $data = Subcourse::get();
 
-        return view('admin.subcourse.subcourse',['course'=>$data]);
+        return view('admin.subcourse.subcourse');
     }
     
     public function create(){
-        return view("admin.subcourse.subcourse_create");
+        $data = Courses::get();
+        return view("admin.subcourse.subcourse_create",['data'=>$data]);
     }
 
     public function store(Request $request){
 
         // dd($request);
-        $request->validate([
-            'title'=> 'required|max:32',
-            'status'=> 'required'
-        ]);
+        // $request->validate([
+        //     'title'=> 'required|max:32',
+        //     'status'=> 'required'
+        // ]);
 
         $course = new Subcourse();
 
-        $course->courses = $request->input('title');
+        $course->course = $request->input('title');
+        $course->desccription = $request->input('description');
+        $course->subdesc = $request->input('subdesc');
+        $course->course_id = $request->input('course_id');
         $course->status = $request->input('status');
         $course->save();
 
@@ -41,8 +46,6 @@ class SubcourseController extends Controller
     public function show()
     {
         $query = Subcourse::select('*');
-      
-
         $data = $query->get();
 
         return DataTables::of($data)
@@ -93,7 +96,7 @@ class SubcourseController extends Controller
                     </select>';
             })
 
-            ->rawColumns(['action',  'created_at'])
+            ->rawColumns(['action', 'status', 'created_at'])
             ->make(true);
     }
 

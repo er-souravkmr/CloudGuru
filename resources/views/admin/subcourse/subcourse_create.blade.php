@@ -42,35 +42,44 @@
                                     </select>
                                 </div>
                             </div>
-
-                            
-
-                            <div class="col-12 mb-2">
-                                <div class="border rounded p-2">
-                                    <h4 class="mb-1">Additional Image/Images</h4>
-                                    <div class="media flex-column flex-md-row">
-                                        <div class="media-body">
-                                            <h5 class="mb-0">Select one or multiple image:</h5>
-                                            <small class="text-muted">Ideal image resolution 800x400.</small>
-                                            <p class="my-50">
-                                                {{-- <a href="javascript:void(0);" id="blog-image-text"></a> --}}
-                                            </p>
-                                            <div class="d-inline-block">
-                                                <div class="form-group mb-0">
-                                                    <div class="custom-file">
-                                                        <input type="file" name="photos[]"
-                                                            class="custom-file-input" id="blogCustomFile"
-                                                            accept="video/*,image/*" multiple />
-                                                        <label class="custom-file-label" for="blogCustomFile">Choose
-                                                            file</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label for="name">Image</label>
+                                    <input type="file"  accept="image/png, image/gif, image/jpeg" class="form-control" name="cat-image" required />
                                 </div>
                             </div>
 
+                            
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label for="category">Course</label>
+                                    <select class="select2 form-control-lg select2-hidden-accessible" id="course" name="course">
+                                        <option value="">Select Course</option>
+                                        @foreach ($data as $cate)
+                                            <option value="{{ $cate->id }}">{{ $cate->courses }}</option>
+                                        @endforeach
+
+                                    </select>
+                                    {{-- @error('category')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror --}}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label for="course_desc">Description</label>
+                                    <textarea data-length="200" class="form-control char-textarea" id="course_desc" rows="3" placeholder="Description" name="description"> </textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label for="course_sub_desc">Sub Description</label>
+                                    <textarea data-length="200" class="form-control char-textarea" id="course_sub_desc" rows="3" placeholder="Description" name="description"> </textarea>
+                                </div>
+                            </div>
+                            
                             <div class="col-12 mt-50">
                                 <button type="submit" class="btn btn-primary mr-1">Save Changes</button>
                                 <a href="{{route('subcourse')}}" type="reset" class="btn btn-outline-secondary">Cancel</a>
@@ -89,7 +98,11 @@
 
 @push('js')
 <script>
-    $("#blog_edit_form").on("submit", function() {
+    $("#course_desc").on("submit", function() {
+        $("#hiddenArea").val(blogEditor.root.innerHTML);
+    });
+
+    $("#course_sub_desc").on("submit", function() {
         $("#hiddenArea").val(blogEditor.root.innerHTML);
     });
 </script>
