@@ -44,8 +44,10 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::post('subcourse/store','SubcourseController@store')->name('subcourse.store');
           Route::get('subcourse/edit/{id}','SubcourseController@edit')->name('subcourse.edit');
           Route::post('subcourse/update','SubcourseController@update')->name('subcourse.update');
-          Route::get('subcourse/delete/{id}','SubcourseController@delete')->name('subcourse.delete');
+          Route::get('subcourse/delete','SubcourseController@delete')->name('subcourse.delete');
           Route::get('subcourse/show','SubcourseController@show')->name('subcourse.show');
+          Route::get('subcourse/status-change','SubcourseController@changeStatus')->name('subcourse.status');
+          
 
           
 

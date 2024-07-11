@@ -90,12 +90,12 @@
                     {
                         data: 'created_at'
                     },
-                   
+
                     {
                         data: 'action'
                     },
                 ],
-                
+
                 dom: 'Bfrtip',
                 buttons: [{
                         extend: 'pdf',
@@ -137,5 +137,46 @@
         });
 
 
+        function changeStatus(id, el) {
+
+            $id = id;
+            $status = $(el).val();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Do You Want To Change Status!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, I Want!',
+                customClass: {
+                    confirmButton: 'btn btn-primary',
+                    cancelButton: 'btn btn-outline-danger ml-1'
+                },
+                buttonsStyling: false,
+                preConfirm: function($login, $blod_id) {
+                    window.location.replace("{{ route('subcourse.status', []) }}?id=" + $id +
+                        "&status=" +
+                        $status);
+                },
+            });
+        }
+
+        function deleteItem(id) {
+            $contact = id;
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                customClass: {
+                    confirmButton: 'btn btn-primary',
+                    cancelButton: 'btn btn-outline-danger ml-1'
+                },
+                buttonsStyling: false,
+                preConfirm: function() {
+                    window.location.replace("{{ route('subcourse.delete', []) }}?id=" + $contact);
+                },
+            });
+        }
     </script>
 @endpush

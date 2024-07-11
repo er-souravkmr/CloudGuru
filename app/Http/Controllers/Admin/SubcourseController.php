@@ -25,18 +25,32 @@ class SubcourseController extends Controller
     public function store(Request $request){
 
         // dd($request);
-        // $request->validate([
-        //     'title'=> 'required|max:32',
-        //     'status'=> 'required'
-        // ]);
+        $request->validate([
+            'name'=> 'required|max:32',
+            'description'=> 'required',
+            'sub_description'=> 'required',
+            'course_id'=> 'required',
+            'status'=> 'required',
+            'course_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg' 
+        ]);
 
         $course = new Subcourse();
 
-        $course->course = $request->input('title');
-        $course->desccription = $request->input('description');
-        $course->subdesc = $request->input('subdesc');
+        $course->course = $request->input('name');
+        $course->description = $request->input('description');
+        $course->subdesc = $request->input('sub_description');
         $course->course_id = $request->input('course_id');
         $course->status = $request->input('status');
+
+
+        if($request->hasFile('course_image')){
+            $file = $request->file('course_image');
+            $fileName = time() . rand(1, 999999).  '.' . $file->getClientOriginalExtension();
+            $path = public_path('uploads');
+            $file->move($path, $fileName);
+            $course->image = $fileName;
+        }
+
         $course->save();
 
         return redirect('admin/subcourse')->with("message","Saved Successfully");
@@ -86,17 +100,15 @@ class SubcourseController extends Controller
                 return $raw->created_at->diffForHumans();
             })
 
-            
-
             ->editColumn('status', function ($raw) {
 
                 return '<select onchange="changeStatus(' . $raw->id . ', this)" class="badge badge-glow badge-success">
                         <option ' . ($raw->status == 1 ? "selected" : "") . ' value="1"> Active </option>
-                        <option ' . ($raw->status == 2 ? "selected" : "") . ' value="2"> InActive </option>
+                        <option ' . ($raw->status == 0 ? "selected" : "") . ' value="0"> InActive </option>
                     </select>';
             })
 
-            ->rawColumns(['action', 'status', 'created_at'])
+            ->rawColumns(['action' , 'status', 'created_at'])
             ->make(true);
     }
 
@@ -125,11 +137,17 @@ class SubcourseController extends Controller
         return redirect('admin/subcourse')->with('message',"Updated Successfully");
     }
 
-    public function delete($id){
-
-        if($id != null){
-            Subcourse::where('id',$id)->delete();
-        }
+    public function delete(Request $request){
+        Subcourse::where('id', $request->id)->delete();
         return redirect('admin/subcourse')->with("message","Deleted Successfully");
+    }
+
+
+    public function changeStatus(Request $request)
+    {
+        $status = SubCourse::where('id', $request->id)->first();
+        $status->status = $request->status;
+        $status->save();
+        return redirect(route('subcourse'))->with('message', 'Status Changed');
     }
 }

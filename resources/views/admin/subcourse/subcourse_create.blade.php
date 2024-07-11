@@ -28,8 +28,13 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-2">
-                                    <label for="blog-edit-title">Course Name</label>
-                                    <input name="title" type="text" id="blog-edit-title" class="form-control" required />
+                                    <label for="blog-edit-title">Subcourse Name</label>
+                                    <input name="name" type="text" id="blog-edit-title" class="form-control" required />
+                                    <span class="text-danger"> 
+                                            @error('name')
+                                               {{$message}}
+                                            @enderror
+                                    </span>
                                 </div>
                             </div>
 
@@ -44,25 +49,32 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-2">
-                                    <label for="name">Image</label>
-                                    <input type="file"  accept="image/png, image/gif, image/jpeg" class="form-control" name="cat-image" required />
+                                    <label for="image">Image</label>
+                                    <input type="file" id="image"  accept="image/png, image/gif, image/jpeg" class="form-control" name="course_image" required />
                                 </div>
+                                <span class="text-danger"> 
+                                        @error('course_image')
+                                        {{$message}}
+                                        @enderror
+                                </span>
                             </div>
 
                             
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-2">
-                                    <label for="category">Course</label>
-                                    <select class="select2 form-control-lg select2-hidden-accessible" id="course" name="course">
+                                    <label for="course_id">Course</label>
+                                    <select class="select2 form-control-lg select2-hidden-accessible" id="course_id" name="course_id">
                                         <option value="">Select Course</option>
                                         @foreach ($data as $cate)
                                             <option value="{{ $cate->id }}">{{ $cate->courses }}</option>
                                         @endforeach
 
                                     </select>
-                                    {{-- @error('category')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror --}}
+                                    <span class="text-danger"> 
+                                        @error('course_id')
+                                           {{$message}}
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
 
@@ -70,13 +82,23 @@
                                 <div class="form-group mb-2">
                                     <label for="course_desc">Description</label>
                                     <textarea data-length="200" class="form-control char-textarea" id="course_desc" rows="3" placeholder="Description" name="description"> </textarea>
+                                    <span class="text-danger"> 
+                                        @error('description')
+                                           {{$message}}
+                                        @enderror
+                                </span>
                                 </div>
                             </div>
 
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-2">
                                     <label for="course_sub_desc">Sub Description</label>
-                                    <textarea data-length="200" class="form-control char-textarea" id="course_sub_desc" rows="3" placeholder="Description" name="description"> </textarea>
+                                    <textarea data-length="200" class="form-control char-textarea" id="course_sub_desc" rows="3" placeholder="Description" name="sub_description"> </textarea>
+                                    <span class="text-danger"> 
+                                        @error('sub_description')
+                                           {{$message}}
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
                             
