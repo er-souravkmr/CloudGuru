@@ -10,28 +10,28 @@ use Yajra\DataTables\Facades\DataTables;
 
 class SubcourseController extends Controller
 {
-    public function index(){
-
-        // $data = Subcourse::get();
-
+    public function index()
+    {
         return view('admin.subcourse.subcourse');
     }
-    
-    public function create(){
+
+    public function create()
+    {
         $data = Courses::get();
-        return view("admin.subcourse.subcourse_create",['data'=>$data]);
+        return view("admin.subcourse.subcourse_create", ['data' => $data]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         // dd($request);
         $request->validate([
-            'name'=> 'required|max:32',
-            'description'=> 'required',
-            'sub_description'=> 'required',
-            'course_id'=> 'required',
-            'status'=> 'required',
-            'course_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg' 
+            'name' => 'required|max:32',
+            'description' => 'required',
+            'sub_description' => 'required',
+            'course_id' => 'required',
+            'status' => 'required',
+            'course_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $course = new Subcourse();
@@ -43,17 +43,17 @@ class SubcourseController extends Controller
         $course->status = $request->input('status');
 
 
-        if($request->hasFile('course_image')){
+        if ($request->hasFile('course_image')) {
             $file = $request->file('course_image');
-            $fileName = time() . rand(1, 999999).  '.' . $file->getClientOriginalExtension();
-            $path = public_path('uploads');
+            $fileName = time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
+            $path = public_path('uploads/subcourse');
             $file->move($path, $fileName);
             $course->image = $fileName;
         }
 
         $course->save();
 
-        return redirect('admin/subcourse')->with("message","Saved Successfully");
+        return redirect('admin/subcourse')->with("message", "Saved Successfully");
 
     }
 
@@ -73,7 +73,7 @@ class SubcourseController extends Controller
                     </svg>
                 </a>
             <div class="dropdown-menu dropdown-menu-right">
-            <a href="#"
+            <a href="{{route("subcourse.edit" ,["id" => $id])}}"
             <button  class="dropdown-item w-100">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text mr-50 font-small-4">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -108,38 +108,68 @@ class SubcourseController extends Controller
                     </select>';
             })
 
-            ->rawColumns(['action' , 'status', 'created_at'])
+            ->rawColumns(['action', 'status', 'created_at'])
             ->make(true);
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
 
         $course = Subcourse::where("id", $id)->first();
-        // dd($course);
-        return view('admin.subcourse.subcourse_edit',['course'=>$course]);
-    }   
-
-    public function update(Request $request){
-
-        $request->validate([
-            'title'=> 'required|max:32',
-            'status'=> 'required'
-        ]);
-        
-        $id = $request->id;
-
-        $course =  Subcourse::where('id',$id)->first();
-
-        $course->courses = $request->input('title');
-        $course->status = $request->input('status');
-        $course->save();   
-
-        return redirect('admin/subcourse')->with('message',"Updated Successfully");
+        $data = Courses::get();
+        return view('admin.subcourse.subcourse_edit', ['course' => $course, 'data' => $data]);
     }
 
-    public function delete(Request $request){
+    public function update(Request $request)
+    {        
+        $request->validate([
+            'name' => 'required|max:32',
+            'description' => 'required',
+            'sub_description' => 'required',
+            'course_id' => 'required',
+            'status' => 'required',
+        ]);
+
+        $course =  Subcourse::find($request->id);
+
+        $course->course = $request->input('name');
+        $course->description = $request->input('description');
+        $course->subdesc = $request->input('sub_description');
+        $course->course_id = $request->input('course_id');
+        $course->status = $request->input('status');
+
+        
+        
+        if ($request->hasFile('course_image')) {
+
+            $oldFilePath = public_path('uploads/subcourse/' . $course->image);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath);
+            }
+
+            $file = $request->file('course_image');
+            $fileName = time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
+            $path = public_path('uploads/subcourse');
+            $file->move($path, $fileName);
+            $course->image = $fileName;
+        }
+
+        if(isset($course->image)){
+            $oldFilePath = public_path('uploads/subcourse' . $course->image);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath);
+            }
+        }
+
+        $course->save();
+
+        return redirect('admin/subcourse')->with("message", "Updated Successfully");
+    }
+
+    public function delete(Request $request)
+    {
         Subcourse::where('id', $request->id)->delete();
-        return redirect('admin/subcourse')->with("message","Deleted Successfully");
+        return redirect('admin/subcourse')->with("message", "Deleted Successfully");
     }
 
 
