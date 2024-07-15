@@ -47,6 +47,15 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('subcourse/delete','SubcourseController@delete')->name('subcourse.delete');
           Route::get('subcourse/show','SubcourseController@show')->name('subcourse.show');
           Route::get('subcourse/status-change','SubcourseController@changeStatus')->name('subcourse.status');
+
+          Route::get('Trainer','TrainerController@index')->name('Trainer');
+          Route::get('Trainer/create','TrainerController@create')->name('Trainer.create');
+          Route::post('Trainer/store','TrainerController@store')->name('Trainer.store');
+          Route::get('Trainer/edit/{id}','TrainerController@edit')->name('Trainer.edit');
+          Route::post('Trainer/update','TrainerController@update')->name('Trainer.update');
+          Route::get('Trainer/delete','TrainerController@delete')->name('Trainer.delete');
+          Route::get('Trainer/show','TrainerController@show')->name('Trainer.show');
+          Route::get('Trainer/status-change','TrainerController@changeStatus')->name('Trainer.status');
           
 
           
