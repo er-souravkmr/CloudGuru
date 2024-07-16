@@ -27,7 +27,7 @@
 
     <nav id="sourav" class="navbar navbar-expand-lg bg-white ">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{ asset('public/assets/img/logo.jpg') }}"
+            <a class="navbar-brand" href="{{route('home')}}"><img src="{{ asset('public/assets/img/logo.jpg') }}"
                     alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

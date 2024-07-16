@@ -102,57 +102,22 @@
 
                     <li class="{{ Request::is('admin/enquire*') ? 'active' : '' }} nav-item"><a
                             class="d-flex align-items-center" href="{{route('enquire')}}">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-columns"
-                                width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <line x1="4" y1="6" x2="9.5" y2="6" />
-                                <line x1="4" y1="10" x2="9.5" y2="10" />
-                                <line x1="4" y1="14" x2="9.5" y2="14" />
-                                <line x1="4" y1="18" x2="9.5" y2="18" />
-                                <line x1="14.5" y1="6" x2="20" y2="6" />
-                                <line x1="14.5" y1="10" x2="20" y2="10" />
-                                <line x1="14.5" y1="14" x2="20" y2="14" />
-                                <line x1="14.5" y1="18" x2="20" y2="18" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#625F6E" viewBox="0 0 512 512"><path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/></svg>
 
                             <span class="menu-title text-truncate">Enquire</span></a>
                     </li>
-{{-- 
-                    <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
-                            class="d-flex align-items-center" href="#">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo"
-                                width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <line x1="15" y1="8" x2="15.01" y2="8" />
-                                <rect x="4" y="4" width="16" height="16" rx="3" />
-                                <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" />
-                                <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" />
-                            </svg>
+                    <li class="{{ Request::is('admin/trainer*') ? 'active' : '' }} nav-item"><a
+                            class="d-flex align-items-center" href="{{route('trainer')}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#625F6E" viewBox="0 0 448 512"><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+                            <span class="menu-title text-truncate">Trainer</span></a>
+                    </li>
 
-                            <span class="menu-title text-truncate">Gallery</span></a>
-                    </li> --}}
-
-                    {{-- <li class="{{ Request::is('admin/contact*') ? 'active' : '' }} nav-item"><a
-                            class="d-flex align-items-center" href="{{ route('blogs') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-device-desktop-analytics" width="44"
-                                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
-                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <rect x="3" y="4" width="18" height="12" rx="1" />
-                                <path d="M7 20h10" />
-                                <path d="M9 16v4" />
-                                <path d="M15 16v4" />
-                                <path d="M9 12v-4" />
-                                <path d="M12 12v-1" />
-                                <path d="M15 12v-2" />
-                                <path d="M12 12v-1" />
-                            </svg>
-                            <span class="menu-title text-truncate">Blogs</span></a>
-                    </li> --}}
+                    <li class="{{ Request::is('admin/certificate*') ? 'active' : '' }} nav-item"><a
+                            class="d-flex align-items-center" href="{{ route('certificate') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#625F6E" viewBox="0 0 512 512"><path d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8.9-17.1 17.3L154.7 80.6l-62-17.5c-8.4-2.4-17.4 0-23.5 6.1s-8.5 15.1-6.1 23.5l17.5 62L18.1 170.6c-8.4 2.1-15 8.7-17.3 17.1S1 205 7.3 211l46.2 45L7.3 301C1 307-1.4 316 .8 324.4s8.9 14.9 17.3 17.1l62.5 15.8-17.5 62c-2.4 8.4 0 17.4 6.1 23.5s15.1 8.5 23.5 6.1l62-17.5 15.8 62.5c2.1 8.4 8.7 15 17.1 17.3s17.3-.2 23.4-6.4l45-46.2 45 46.2c6.1 6.2 15 8.7 23.4 6.4s14.9-8.9 17.1-17.3l15.8-62.5 62 17.5c8.4 2.4 17.4 0 23.5-6.1s8.5-15.1 6.1-23.5l-17.5-62 62.5-15.8c8.4-2.1 15-8.7 17.3-17.1s-.2-17.4-6.4-23.4l-46.2-45 46.2-45c6.2-6.1 8.7-15 6.4-23.4s-8.9-14.9-17.3-17.1l-62.5-15.8 17.5-62c2.4-8.4 0-17.4-6.1-23.5s-15.1-8.5-23.5-6.1l-62 17.5L341.4 18.1c-2.1-8.4-8.7-15-17.1-17.3S307 1 301 7.3L256 53.5 211 7.3z"/></svg>
+                            <span class="menu-title text-truncate">Certificates</span></a>
+                    </li>
                 @endif
             </ul>
         </div>

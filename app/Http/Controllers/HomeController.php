@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
+use App\Models\Trainer;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,13 +16,15 @@ class HomeController extends Controller
         return view('about');
     }
     public function trainers(){
-        return view('trainers');
+        $data = Trainer::where('status',1)->get();
+        return view('trainers',['data'=>$data]);
     }
     public function gallery(){
         return view('gallery');
     }
     public function certification(){
-        return view('certificate');
+        $data = Certificate::where('status',1)->get();
+        return view('certificate',['data'=>$data]);
     }
     public function course(){
         return view('courses');

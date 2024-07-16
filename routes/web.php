@@ -37,7 +37,7 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('course/edit/{id}','CourseController@edit')->name('course.edit');
           Route::post('course/update','CourseController@update')->name('course.update');
           Route::get('course/delete/{id}','CourseController@delete')->name('course.delete');
-        //   Route::get('course/show','CourseController@show')->name('course.show');
+        
           
           Route::get('subcourse','SubcourseController@index')->name('subcourse');
           Route::get('subcourse/create','SubcourseController@create')->name('subcourse.create');
@@ -48,17 +48,21 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('subcourse/show','SubcourseController@show')->name('subcourse.show');
           Route::get('subcourse/status-change','SubcourseController@changeStatus')->name('subcourse.status');
 
-          Route::get('Trainer','TrainerController@index')->name('Trainer');
-          Route::get('Trainer/create','TrainerController@create')->name('Trainer.create');
-          Route::post('Trainer/store','TrainerController@store')->name('Trainer.store');
-          Route::get('Trainer/edit/{id}','TrainerController@edit')->name('Trainer.edit');
-          Route::post('Trainer/update','TrainerController@update')->name('Trainer.update');
-          Route::get('Trainer/delete','TrainerController@delete')->name('Trainer.delete');
-          Route::get('Trainer/show','TrainerController@show')->name('Trainer.show');
-          Route::get('Trainer/status-change','TrainerController@changeStatus')->name('Trainer.status');
-          
+          Route::get('trainer','TrainerController@index')->name('trainer');
+          Route::get('trainer/create','TrainerController@create')->name('trainer.create');
+          Route::post('trainer/store','TrainerController@store')->name('trainer.store');
+          Route::get('trainer/edit/{id}','TrainerController@edit')->name('trainer.edit');
+          Route::post('trainer/update','TrainerController@update')->name('trainer.update');
+          Route::get('trainer/delete','TrainerController@delete')->name('trainer.delete');
 
+          Route::get('certificate','CertificateController@index')->name('certificate');
+          Route::get('certificate/create','CertificateController@create')->name('certificate.create');
+          Route::post('certificate/store','CertificateController@store')->name('certificate.store');
+          Route::get('certificate/edit/{id}','CertificateController@edit')->name('certificate.edit');
+          Route::post('certificate/update','CertificateController@update')->name('certificate.update');
+          Route::get('certificate/delete','CertificateController@delete')->name('certificate.delete');
           
+             
 
       });
   });
