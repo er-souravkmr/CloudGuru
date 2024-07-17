@@ -11,7 +11,7 @@ use App\Http\Controllers\Frontend\EnquireController;
 Route::get('/' , [HomeController::class , 'index'])->name('home');
 Route::get('/about' , [HomeController::class , 'about'])->name('about');
 Route::get('/trainers' , [HomeController::class , 'trainers'])->name('trainers');
-Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallery');
+Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallerys');
 Route::get('/certification' , [HomeController::class , 'certification'])->name('certification');
 Route::get('/course' , [HomeController::class , 'course'])->name('courses');
 Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
@@ -61,6 +61,13 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('certificate/edit/{id}','CertificateController@edit')->name('certificate.edit');
           Route::post('certificate/update','CertificateController@update')->name('certificate.update');
           Route::get('certificate/delete','CertificateController@delete')->name('certificate.delete');
+          
+          Route::get('gallery','GalleryController@index')->name('gallery');
+          Route::get('gallery/create','GalleryController@create')->name('gallery.create');
+          Route::post('gallery/store','GalleryController@store')->name('gallery.store');
+          Route::get('gallery/edit/{id}','GalleryController@edit')->name('gallery.edit');
+          Route::post('gallery/update','GalleryController@update')->name('gallery.update');
+          Route::get('gallery/delete','GalleryController@delete')->name('gallery.delete');
           
              
 
