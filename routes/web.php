@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Frontend\EnquireController;
+use App\Http\Controllers\Frontend\SubcourseController;
 
 //Home Routes
 Route::get('/' , [HomeController::class , 'index'])->name('home');
@@ -13,12 +14,12 @@ Route::get('/about' , [HomeController::class , 'about'])->name('about');
 Route::get('/trainers' , [HomeController::class , 'trainers'])->name('trainers');
 Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallerys');
 Route::get('/certification' , [HomeController::class , 'certification'])->name('certification');
-Route::get('/course' , [HomeController::class , 'course'])->name('courses');
+Route::get('/courses/{id}' , [SubcourseController::class , 'index']);
 Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
 
 
 
-//Admin Route 
+  //Admin Route 
   Route::get('/admin' , [AdminController::class , 'index']);
   Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function(){     
       Route::match(['get','post'],'login', 'AdminController@login')->name('login');

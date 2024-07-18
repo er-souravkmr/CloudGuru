@@ -18,7 +18,7 @@ class AdminController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             if(Auth::guard('admin')->attempt(['email'=>$data['email'],'password'=>$data['password']])){
-                return view('admin.layouts.app');
+                return view('admin.dashboard');
             }else{
                 return redirect()->back()->with("message","Invalid Email or Password");
             }

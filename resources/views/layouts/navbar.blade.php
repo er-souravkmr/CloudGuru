@@ -61,7 +61,7 @@
                                             @foreach ($item->subcourses as $subcourse)
                                                 @if ($subcourse)
                                                     <!-- Check if $subcourse is not null -->
-                                                    <li><a class="dropdown-item" href="#">{{ $subcourse->course }}</a>
+                                                    <li><a class="dropdown-item" href="{{route('courses')}}/{{$subcourse->id}}">{{ $subcourse->course }}</a>
                                                     </li>
                                                 @endif
                                             @endforeach

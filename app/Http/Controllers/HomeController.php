@@ -28,7 +28,7 @@ class HomeController extends Controller
         $data = Certificate::where('status',1)->get();
         return view('certificate',['data'=>$data]);
     }
-    public function course(){
+    public function course(){ 
         return view('courses');
     }
 
