@@ -59,7 +59,7 @@ class SubcourseController extends Controller
 
     public function show()
     {
-        $query = Subcourse::select('*');
+        $query =  Subcourse::select('*');
         $data = $query->get();
 
         return DataTables::of($data)
@@ -96,6 +96,10 @@ class SubcourseController extends Controller
         </div>
     </div>')
 
+            ->addColumn('courses', function ($raw) {
+                return $raw->courses->courses;
+            })
+
             ->addColumn('created_at', function ($raw) {
                 return $raw->created_at->diffForHumans();
             })
@@ -108,7 +112,7 @@ class SubcourseController extends Controller
                     </select>';
             })
 
-            ->rawColumns(['action', 'status', 'created_at'])
+            ->rawColumns(['action','courses','status', 'created_at'])
             ->make(true);
     }
 

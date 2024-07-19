@@ -11,8 +11,9 @@ class SubcourseController extends Controller
 {
     public function index(Request $request){
         $id = $request->id;
-        $subcourse = Subcourse::where('id',$id)->get();
+        $subcourse = Subcourse::where('id',$id)->first();
+        // dd($subcourse);
 
-        return view('course',['subcourse' => $subcourse]);
+        return view('courses',['subcourse' => $subcourse]);
     }
 }

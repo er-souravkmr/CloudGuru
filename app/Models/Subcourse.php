@@ -10,7 +10,7 @@ class Subcourse extends Model
 {
     use HasFactory;
     protected  $table = "subcourse";
-    public function course(){
+    public function courses(){
         return $this->belongsTo(Courses::class,'course_id');
     }
 }

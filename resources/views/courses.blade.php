@@ -11,7 +11,7 @@
                             <ol class="breadcrumb">
                               <li class="breadcrumb-item"><a href="#"><i class='bx bxs-home'></i></a></li>
                               {{-- <li class="breadcrumb-item"></li> --}}
-                              <li class="breadcrumb-item active text-primary" aria-current="page">Main</li>
+                              <li class="breadcrumb-item active text-primary" aria-current="page">{{ $subcourse->course}}</li>
                             </ol>
                           </nav>
                    
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-8">
                 <h4 style="font-weight:700">Course: <span class="text-primary">{{ $subcourse->course}} </span> <span class="line"></span></h4>
-                <p>{{$subcourse->description}}</p>
+                <p style="  text-align: justify; text-justify: inter-word;">{{$subcourse->description}}</p>
 
                 <hr>
                 
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <p>{{$subcourse->subdesc}}</p>
+                <p style="  text-align: justify; text-justify: inter-word;">{{$subcourse->subdesc}}</p>
             </div>
         </div>
     </div>

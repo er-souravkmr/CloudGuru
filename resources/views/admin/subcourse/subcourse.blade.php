@@ -82,7 +82,7 @@
                         data: 'course'
                     },
                     {
-                        data: 'course_id'
+                        data: 'courses'
                     },
                     {
                         data: 'status'

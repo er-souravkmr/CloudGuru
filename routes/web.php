@@ -14,7 +14,7 @@ Route::get('/about' , [HomeController::class , 'about'])->name('about');
 Route::get('/trainers' , [HomeController::class , 'trainers'])->name('trainers');
 Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallerys');
 Route::get('/certification' , [HomeController::class , 'certification'])->name('certification');
-Route::get('/courses/{id}' , [SubcourseController::class , 'index']);
+Route::get('/courses/{id}' , [SubcourseController::class , 'index'])->name('courses');
 Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
 
 
