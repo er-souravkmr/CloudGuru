@@ -47,9 +47,9 @@
                                     placeholder="Email ID" name="email"></div>
                             <select class="form-select" aria-label="Default select example" name="course">
                                 <option selected>Courses</option>
-                                <option value="C++">C++</option>
-                                <option value="Java">Java</option>
-                                <option value="Python">Python</option>
+                                @foreach ($data as $item)
+                                <option value="{{$item->course}}">{{$item->course}}</option>
+                                @endforeach
                             </select>
                             <button type="submit" class="eq-btn mt-4 ">Submit</button>
 
@@ -122,10 +122,10 @@
                         <h5>About Us<span class="line"></h5>
                         <h4>Welcome to <span class="text-primary">Cloud Guru</span></h4>
 
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis velit dolorem tempore quasi
+                        <p style="  text-align: justify; text-justify: inter-word;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis velit dolorem tempore quasi
                             porro facere rerum. Enim, laboriosam at. Magni placeat consectetur vitae repellat
                             distinctio, officia temporibus? Aliquam, atque natus.
-                            </p><p>
+                            </p><p style="  text-align: justify; text-justify: inter-word;">
                             Nisi explicabo optio suscipit perferendis laboriosam totam, accusamus dolorum cupiditate
                             dicta esse rem beatae vitae tenetur voluptatum exercitationem, blanditiis, recusandae ullam
                             possimus molestias iste. Velit nesciunt assumenda quaerat ipsa. Eos.
@@ -222,7 +222,7 @@
                         <h5>Meet<span class="line"></h5>
                         <h4>Our <span class="text-primary">Trainers</span></h5>
 
-                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis velit dolorem tempore quasi
+                            <p style="  text-align: justify; text-justify: inter-word;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis velit dolorem tempore quasi
                                 porro facere rerum. Enim, laboriosam at. Magni placeat consectetur vitae repellat
                                 distinctio, officia temporibus? Aliquam, atque natus.
                                 Nisi explicabo optio suscipit perferendis laboriosam totam, accusamus dolorum cupiditate

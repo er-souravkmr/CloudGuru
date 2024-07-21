@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Certificate;
+use App\Models\Company;
 use App\Models\Gallery;
+use App\Models\Subcourse;
 use App\Models\Trainer;
+use App\Models\Certificate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('index');
+        $data = Subcourse::where('status',1)->get();
+        return view('index',['data'=>$data]);
     }
 
     public function about(){
@@ -28,8 +31,9 @@ class HomeController extends Controller
         $data = Certificate::where('status',1)->get();
         return view('certificate',['data'=>$data]);
     }
-    public function course(){ 
-        return view('courses');
+    public function placement(){
+        $data = Company::where('status',1)->get();
+        return view('certificate',['data'=>$data]);
     }
 
 }

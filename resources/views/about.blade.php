@@ -28,7 +28,7 @@
                         <h5>About Us<span class="line"></span></h5>
                         <h1 style="font-weight: 700">Welcome to <span class="text-primary">Cloud Guru</span></h1>
 
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis velit dolorem tempore quasi
+                        <p style="  text-align: justify; text-justify: inter-word;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis velit dolorem tempore quasi
                             porro facere rerum. Enim, laboriosam at. Magni placeat consectetur vitae repellat
                             distinctio, officia temporibus? Aliquam, atque natus.
                             Nisi explicabo optio suscipit perferendis laboriosam totam, accusamus dolorum cupiditate
@@ -48,10 +48,10 @@
                 </div>
                 <div class="col-md-12">
                     <h1 style="font-weight: 700">Heading</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias tempora illo
+                    <p style="  text-align: justify; text-justify: inter-word;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias tempora illo
                         consequuntur quis sapiente nesciunt quaerat, laboriosam ratione a molestiae dignissimos ex porro
                         sit, nobis labore autem, culpa ipsa!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident possimus officiis facilis
+                    <p style="  text-align: justify; text-justify: inter-word;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident possimus officiis facilis
                         sapiente ab non eius, cupiditate, enim quos, iure repellendus molestiae ducimus vitae? Vitae amet
                         exercitationem repudiandae quidem.</p>
                 </div>

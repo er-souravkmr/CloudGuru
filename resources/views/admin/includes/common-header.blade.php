@@ -88,14 +88,7 @@
                     <li class="{{ Request::is('admin/subcourse*') ? 'active' : '' }} nav-item"><a
                             class="d-flex align-items-center" href="{{ route('subcourse') }}">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-center"
-                                width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
-                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <line x1="4" y1="6" x2="20" y2="6" />
-                                <line x1="8" y1="12" x2="16" y2="12" />
-                                <line x1="6" y1="18" x2="18" y2="18" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#625F6E" viewBox="0 0 512 512"><path d="M40 64c-4.4 0-8 3.6-8 8l0 48c0 4.4 3.6 8 8 8l48 0c4.4 0 8-3.6 8-8l0-48c0-4.4-3.6-8-8-8L40 64zM16 72c0-13.3 10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 48c0 13.3-10.7 24-24 24l-48 0c-13.3 0-24-10.7-24-24l0-48zM176 88l320 0c4.4 0 8 3.6 8 8s-3.6 8-8 8l-320 0c-4.4 0-8-3.6-8-8s3.6-8 8-8zm0 160l320 0c4.4 0 8 3.6 8 8s-3.6 8-8 8l-320 0c-4.4 0-8-3.6-8-8s3.6-8 8-8zm0 160l320 0c4.4 0 8 3.6 8 8s-3.6 8-8 8l-320 0c-4.4 0-8-3.6-8-8s3.6-8 8-8zM88 224l-48 0c-4.4 0-8 3.6-8 8l0 48c0 4.4 3.6 8 8 8l48 0c4.4 0 8-3.6 8-8l0-48c0-4.4-3.6-8-8-8zM40 208l48 0c13.3 0 24 10.7 24 24l0 48c0 13.3-10.7 24-24 24l-48 0c-13.3 0-24-10.7-24-24l0-48c0-13.3 10.7-24 24-24zm0 176c-4.4 0-8 3.6-8 8l0 48c0 4.4 3.6 8 8 8l48 0c4.4 0 8-3.6 8-8l0-48c0-4.4-3.6-8-8-8l-48 0zm-24 8c0-13.3 10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 48c0 13.3-10.7 24-24 24l-48 0c-13.3 0-24-10.7-24-24l0-48z"/></svg>
 
                             <span class="menu-title text-truncate">Sub Courses</span></a>
                     </li>
@@ -119,12 +112,17 @@
                             <span class="menu-title text-truncate">Certificates</span></a>
                     </li>
 
-                    
+                    <li class="{{ Request::is('admin/company*') ? 'active' : '' }} nav-item"><a
+                            class="d-flex align-items-center" href="{{ route('company') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#625F6E" viewBox="0 0 384 512"><path d="M48 0C21.5 0 0 21.5 0 48L0 464c0 26.5 21.5 48 48 48l96 0 0-80c0-26.5 21.5-48 48-48s48 21.5 48 48l0 80 96 0c26.5 0 48-21.5 48-48l0-416c0-26.5-21.5-48-48-48L48 0zM64 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zm112-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM80 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM272 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16z"/></svg>
+                            <span class="menu-title text-truncate">Company</span></a>
+                    </li>
+
                     <li class="{{ Request::is('admin/gallery*') ? 'active' : '' }} nav-item"><a
                         class="d-flex align-items-center" href="{{route('gallery')}}">
                         <svg xmlns="http://www.w3.org/2000/svg"  fill="#625F6E" viewBox="0 0 512 512"><path d="M220.6 121.2L271.1 96 448 96l0 96-114.8 0c-21.9-15.1-48.5-24-77.2-24s-55.2 8.9-77.2 24L64 192l0-64 128 0c9.9 0 19.7-2.3 28.6-6.8zM0 128L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L271.1 32c-9.9 0-19.7 2.3-28.6 6.8L192 64l-32 0 0-16c0-8.8-7.2-16-16-16L80 32c-8.8 0-16 7.2-16 16l0 16C28.7 64 0 92.7 0 128zM168 304a88 88 0 1 1 176 0 88 88 0 1 1 -176 0z"/></svg>
                         <span class="menu-title text-truncate">Gallery</span></a>
-                </li>
+                    </li>
                 @endif
             </ul>
         </div>

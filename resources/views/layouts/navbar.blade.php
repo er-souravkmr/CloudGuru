@@ -13,7 +13,8 @@
                         training@cloudguru.co.in</span>
                 </div>
                 <div class="col-md-3">
-                    <div class="btn btn-outline-light f-r" id="enquire">Enquire Now </div>
+                    <div class="btn btn-outline-light f-r" id="enquire"><a href="{{route('home')}}" style="color: rgb(255 255 255);
+    text-decoration: none;">Enquire Us</a></div>
                     <div class="btn btn-outline-light f-r" id="contact">Contact Us </div>
 
 
@@ -104,7 +105,7 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link " href="#">
+                        <a class="nav-link " href="{{ route('placement') }}">
                             Placement
                         </a>
 

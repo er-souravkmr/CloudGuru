@@ -14,6 +14,7 @@ Route::get('/about' , [HomeController::class , 'about'])->name('about');
 Route::get('/trainers' , [HomeController::class , 'trainers'])->name('trainers');
 Route::get('/gallery' , [HomeController::class , 'gallery'])->name('gallerys');
 Route::get('/certification' , [HomeController::class , 'certification'])->name('certification');
+Route::get('/placement' , [HomeController::class , 'placement'])->name('placement');
 Route::get('/courses/{id}' , [SubcourseController::class , 'index'])->name('courses');
 Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
 
@@ -62,6 +63,13 @@ Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry')
           Route::get('certificate/edit/{id}','CertificateController@edit')->name('certificate.edit');
           Route::post('certificate/update','CertificateController@update')->name('certificate.update');
           Route::get('certificate/delete','CertificateController@delete')->name('certificate.delete');
+
+          Route::get('company','CompanyController@index')->name('company');
+          Route::get('company/create','CompanyController@create')->name('company.create');
+          Route::post('company/store','CompanyController@store')->name('company.store');
+          Route::get('company/edit/{id}','CompanyController@edit')->name('company.edit');
+          Route::post('company/update','CompanyController@update')->name('company.update');
+          Route::get('company/delete','CompanyController@delete')->name('company.delete');
           
           Route::get('gallery','GalleryController@index')->name('gallery');
           Route::get('gallery/create','GalleryController@create')->name('gallery.create');
