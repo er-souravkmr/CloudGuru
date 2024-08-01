@@ -9,7 +9,7 @@
          
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="#"><i class='bx bxs-home'></i></a></li>
+                              <li class="breadcrumb-item"><a href="{{route('home')}}"><i class='bx bxs-home'></i></a></li>
                               {{-- <li class="breadcrumb-item"></li> --}}
                               <li class="breadcrumb-item active text-primary" aria-current="page">{{ $subcourse->course}}</li>
                             </ol>

@@ -12,8 +12,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $data = Subcourse::where('status',1)->get();
-        return view('index',['data'=>$data]);
+        $data = Subcourse::where('status',1)->limit(8)->get();
+        $trainer = Trainer::where('status',1)->limit(4)->get();
+        return view('index',['data'=>$data , 'trainer'=>$trainer]);
     }
 
     public function about(){
@@ -34,6 +35,9 @@ class HomeController extends Controller
     public function placement(){
         $data = Company::where('status',1)->get();
         return view('certificate',['data'=>$data]);
+    }
+    public function contact(){
+        return view('contact');
     }
 
 }

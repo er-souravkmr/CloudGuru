@@ -15,7 +15,8 @@
                 <div class="col-md-3">
                     <div class="btn btn-outline-light f-r" id="enquire"><a href="{{route('home')}}" style="color: rgb(255 255 255);
     text-decoration: none;">Enquire Us</a></div>
-                    <div class="btn btn-outline-light f-r" id="contact">Contact Us </div>
+                    <div class="btn btn-outline-light f-r" id="contact"><a href="{{route('contact')}}" style="color: rgb(255 255 255);
+    text-decoration: none;">Contact Us </a></div>
 
 
                 </div>

@@ -8,7 +8,7 @@
                         <h2 class="about-head mt-3" data-aos="fade-up" data-aos-duration="600"> Gallery</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                               <li class="breadcrumb-item"><a href="#"><i class='bx bxs-home'></i></a></li>
+                               <li class="breadcrumb-item"><a href="{{route('home')}}"><i class='bx bxs-home'></i></a></li>
                                 <li class="breadcrumb-item active text-white" aria-current="page">Gallery</li>
                             </ol>
                         </nav>
