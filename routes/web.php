@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\EnquireController;
 use App\Http\Controllers\Frontend\SubcourseController;
 
@@ -18,6 +20,7 @@ Route::get('/placement' , [HomeController::class , 'placement'])->name('placemen
 Route::get('/contact' , [HomeController::class , 'contact'])->name('contact');
 Route::get('/courses/{id}' , [SubcourseController::class , 'index'])->name('courses');
 Route::post('/enquire' , [EnquireController::class , 'submit'])->name('enquiry');
+Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 
 
