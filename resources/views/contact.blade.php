@@ -56,21 +56,25 @@
                     <div class="shadow-lg rounded py-5 px-5 bg-info">
                         <h2 class="text-center" style="font-weight: 600">Enquire Now</h2>
                         @if (session('success'))
-                            <p style="color: green;">{{ session('success') }}</p>
+                            <p style="color: white;">{{ session('success') }}</p>
                         @endif
-                        <form action="{{route("contact.submit")}}" method="post">
+                        <form action="/contact/submit" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Phone:</label>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter your Phone Number">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="message">Service You Want:</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary mt-2">Submit</button>
                         </form>
