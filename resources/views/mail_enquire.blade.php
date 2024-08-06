@@ -6,11 +6,10 @@
     <title>Contact Form Submission</title>
 </head>
 <body>
-    <h1>Contact Form Submission</h1>
+    <h1>Enquire Form Submission</h1>
     <p><strong>Name:</strong> {{ $name }}</p>
-    <p><strong>Mobile:</strong> {{ $phone }}</p>
     <p><strong>Email:</strong> {{ $email }}</p>
-    <p><strong>Message:</strong></p>
-    <p>{{ $message_content }}</p>
+    <p><strong>Email:</strong> {{ $phone }}</p>
+    <p><strong>Course:</strong>{{ $course }}</p>
 </body>
 </html>

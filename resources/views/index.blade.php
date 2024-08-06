@@ -37,7 +37,7 @@
                                 src="https://cdn-icons-png.flaticon.com/128/841/841364.png" width="20px" height="20px"
                                 alt=""> </h4>
 
-                        <form action="{{ asset('public//enquire') }}" method="POST">
+                        <form action="{{ asset('/enquire') }}" method="POST">
                             @csrf
                             <div class="mb-3"><input type="text" class="form-control" id="name" placeholder="Name"
                                     name="name">
@@ -47,7 +47,7 @@
                             <div class="mb-3"><input type="email" class="form-control" id="email"
                                     placeholder="Email ID" name="email"></div>
                             <select class="form-select" aria-label="Default select example" name="course">
-                                <option selected>Courses</option>
+                                <option selected>Select Course</option>
                                 @foreach ($data as $item)
                                     <option value="{{ $item->course }}">{{ $item->course }}</option>
                                 @endforeach
@@ -55,11 +55,11 @@
                             <button type="submit" class="eq-btn mt-4 ">Submit</button>
 
                         </form>
-                        {{-- @if (session('success'))
+                        @if (session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
                             </div>
-                        @endif --}}
+                        @endif
                     </div>
                 </div>
             </div>

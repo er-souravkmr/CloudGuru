@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Enquire;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class EnquireController extends Controller
 {
@@ -31,8 +32,24 @@ class EnquireController extends Controller
         $enquire->course = $request->input('course');
         $enquire->save();
 
+         // Gather the form data
+         $data = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'course' => $request->input('course'),
+        ];
+  
+        // Send the email
+        Mail::send('mail_enquire', $data, function($message) use ($data) {
+            $message->to('mcaashishkumr@gmail.com') 
+                    ->subject('Contact Form Submission');
+            $message->from("training@cloudguru.co.in", "Cloud Guru");
+        });
+
+
         // dd($enquire);
-        return redirect('/')->with('success','Enquired Successfully');
+        return redirect('/')->with('success','Thanks for Contacting us. We will back to you Shortly.');
 
     }
 }
