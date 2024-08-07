@@ -1,8 +1,21 @@
-A Website which a Course and Subcourse Details and a Admin Panel to make content Dynamic as Project in making .......
+# Simple Website Project
 
-Technology Used :
-PHP
-Laravel
-HTML,CSS,JS
-Bootstrap
-MySQL 
+## Overview
+
+This project is a simple website that lists courses and subcourses. It includes an admin section built with Laravel MVC to manage the website's content dynamically. Additionally, the site is equipped with email functionality to handle inquiries and contact forms.
+
+## Technologies used
+
+- PHP
+- Laravel
+- MySQL
+- Bootstarp
+- HTML , CSS ,JS
+- Hostinger Mail 
+
+
+## Features
+
+- **Dynamic Content Management**: Admin section for managing courses and subcourses.
+- **Mailer Integration**: Functionality to send emails for inquiries and contact forms.
+- **Laravel MVC**: Utilized for building the backend of the admin section.
