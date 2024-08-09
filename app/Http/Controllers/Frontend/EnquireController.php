@@ -42,7 +42,7 @@ class EnquireController extends Controller
   
         // Send the email
         Mail::send('mail_enquire', $data, function($message) use ($data) {
-            $message->to('mcaashishkumr@gmail.com') 
+            $message->to('support@aarohitech.com') 
                     ->subject('Contact Form Submission');
             $message->from("training@cloudguru.co.in", "Cloud Guru");
         });

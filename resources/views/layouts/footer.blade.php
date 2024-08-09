@@ -15,11 +15,11 @@
 
                 <h5 class="mb-3">Trending Course</h5>
                 <ul>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
+                    <li>SC-900</li>
+                    <li>AZ-900</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>JAVA</li>
                 </ul>
             </div>
             <div class="col-md-2">
@@ -42,16 +42,7 @@
                     <li>Cyber Security</li>
                 </ul>
             </div>
-            <div class="col-md-2">
-                 <h5 class="mb-3">Trending Course</h5>
-                <ul>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                </ul>
-            </div>
+          
           
         
         

@@ -28,7 +28,7 @@ class ContactController extends Controller
         // dd($data);
         // Send the email
         Mail::send('mail_view', $data, function($message) use ($data) {
-            $message->to('mcaashishkumar@gmail.com') 
+            $message->to('support@aarohitech.com') 
                     ->subject('Contact Form Submission');
             $message->from("training@cloudguru.co.in", "Cloud Guru");
         });
