@@ -81,14 +81,8 @@
                             Batches
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cloud Technologies</a></li>
-                            <li><a class="dropdown-item" href="#">Cyber Security</a></li>
-                            <li><a class="dropdown-item" href="#">Network & Firewall </a></li>
-                            <li><a class="dropdown-item" href="#">Artificial Intelligence(AI)</a></li>
-                            <li><a class="dropdown-item" href="#">Machine Learning (ML)</a></li>
-                            <li><a class="dropdown-item" href="#">Data Science</a></li>
-                            <li><a class="dropdown-item" href="#">Website Devlopment</a></li>
-                            <li><a class="dropdown-item" href="#">Microsoft Technologies</a></li>
+                            <li><a class="dropdown-item" href="#">Offline</a></li>
+                            <li><a class="dropdown-item" href="#">Online</a></li>                          
                         </ul>
                     </li>
 

@@ -1,6 +1,6 @@
     <footer id="foot" class="bg-dark text-white ">
        <div class="container pb-3">
-        <div class="row">
+        <div class="row" style="justify-content: space-around;">
             <div class="col-md-4">
                 <div class="foot-logo mb-4 p-2">
                     <img src="{{asset('public/assets/img/logo.jpg')}}" alt="" height="80px" width="150px">
@@ -12,39 +12,38 @@
 
             </div>
             <div class="col-md-2">
+                <h5 class="my-3">Contact Us</h5>
+                <div>
+                    <h6  style="font-weight: 600"><i class='bx bx-current-location'></i> Location:</h6>
+                    <p style="color: #b3b3b3">202, Jai Maa CGHS, Sector 65, Faridabad, HR - 121004</p>
+                    <h6 class="pt-2" style="font-weight: 600"><i class='bx bxs-envelope'></i> Email:</h6>
+                    <p ><a style="color: #b3b3b3" href="mailto:support@aarohitech.com"> support@aarohitech.com</a></p>
+                    <h6 class="pt-2" style="font-weight: 600"> <i class='bx bxs-phone'></i>Call:</h6>
+                    <p style="color: #b3b3b3"> +91 8700307203</p>
+                </div>
+           </div>
+            <div class="col-md-2">
 
-                <h5 class="mb-3">Trending Course</h5>
+                <h5 class="my-3">Trending Course</h5>
                 <ul>
-                    <li>SC-900</li>
-                    <li>AZ-900</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>JAVA</li>
+                    {{-- {{dd(getCourse())}} --}}
+                    @foreach (getCourse() as $item)
+                        <li value="{{ $item->course }}">{{ $item->course }}</li>
+                    @endforeach
                 </ul>
+                
             </div>
             <div class="col-md-2">
-                 <h5 class="mb-3">Trending Course</h5>
-                <ul>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                </ul>
+
+                <h5 class="my-3">Google Map</h5>
+                <div>
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3512.5964614470718!2d77.3395982739877!3d28.310545875842028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdb9f82f286b1%3A0xb3df276492c83b0f!2sJai%20Maa%20Society!5e0!3m2!1sen!2sin!4v1712480416562!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
             </div>
-            <div class="col-md-2">
-                 <h5 class="mb-3">Trending Course</h5>
-                <ul>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                    <li>Cyber Security</li>
-                </ul>
-            </div>
-          
-          
-        
         
         </div>
        

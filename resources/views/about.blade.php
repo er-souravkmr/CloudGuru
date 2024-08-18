@@ -92,33 +92,17 @@
         </div>
     </section>
 
-    <section id="placement_partner" class="pb-5">
+    <section id="placement_partner" class="py-5">
         <div class="container">
             <h5 style="font-weight:700">Our<span class="line"></span></h5>
             <h3 style="font-weight:700"> Placement <span class="text-primary"> Partner</h3>
             <div class="placement_carousel owl-carousel owl-theme pt-4">
-                <div class="item"><img
-                        src="https://img.freepik.com/free-photo/office-skyscrapers-business-district_107420-95733.jpg?t=st=1715493539~exp=1715497139~hmac=7e5ed2fe3cffe121cb12b05a92fe589d45644ddb1c4c1ba4f0efc2f6cfd06b12&w=900"
-                        alt=""> 
-                </div>
-                <div class="item"><img
-                        src="https://img.freepik.com/free-photo/office-skyscrapers-business-district_107420-95733.jpg?t=st=1715493539~exp=1715497139~hmac=7e5ed2fe3cffe121cb12b05a92fe589d45644ddb1c4c1ba4f0efc2f6cfd06b12&w=900"
-                        alt=""> 
-                </div>
-                <div class="item"><img
-                        src="https://img.freepik.com/free-photo/office-skyscrapers-business-district_107420-95733.jpg?t=st=1715493539~exp=1715497139~hmac=7e5ed2fe3cffe121cb12b05a92fe589d45644ddb1c4c1ba4f0efc2f6cfd06b12&w=900"
-                        alt=""> 
-                </div>
-                <div class="item"><img
-                        src="https://img.freepik.com/free-photo/office-skyscrapers-business-district_107420-95733.jpg?t=st=1715493539~exp=1715497139~hmac=7e5ed2fe3cffe121cb12b05a92fe589d45644ddb1c4c1ba4f0efc2f6cfd06b12&w=900"
-                        alt=""> 
-                </div>
-                <div class="item"><img
-                        src="https://img.freepik.com/free-photo/office-skyscrapers-business-district_107420-95733.jpg?t=st=1715493539~exp=1715497139~hmac=7e5ed2fe3cffe121cb12b05a92fe589d45644ddb1c4c1ba4f0efc2f6cfd06b12&w=900"
-                        alt=""> 
-                </div>
-
-                
+                @foreach (getPartner() as $item)
+                    <div class="item"><img
+                            src="{{asset("public/uploads/company")}}/{{$item->image}}"
+                            alt="" height="250px"> 
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
